@@ -55,13 +55,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\autoDestroy.cs" />
      <Compile Include="Assets\backgroundController.cs" />
+     <Compile Include="Assets\garbageRemove.cs" />
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\SpawnerController.cs" />
      <Compile Include="Assets\TimeManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Editor">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Runtime">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VisualEffectGraph.Runtime">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -71,6 +82,24 @@
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VisualEffectGraph.Editor">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ShaderGraph.Editor">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+ <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>E:/Unity/SphereDrop/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

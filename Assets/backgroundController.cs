@@ -15,7 +15,7 @@ public class backgroundController : MonoBehaviour
     void Start()
     {
         startPos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.y+ 150;
+        length = GetComponent<SpriteRenderer>().bounds.size.y+150;
        
     }
 

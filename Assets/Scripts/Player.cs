@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public int clickForce = 500;
     public Text text;
+    public Text score_text;
     public ParticleSystem particles;
     public ParticleSystem slowParticles;
     public Image timeBar;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     private LineRenderer line;
 
     private float health;
+    public float score;
     private float horizontalPos;
     private Vector3 mouseDir;
     private Vector3 mousePos;
@@ -43,14 +45,19 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate() {
-
-        rb2D.AddForce(transform.right * horizontalPos * speed);
+        rb2D.velocity = Vector2.ClampMagnitude(rb2D.velocity, speed);
+        
         if (ispressed) {
 
             timePressed -= 0.1f;
             timeBar.fillAmount = timePressed / 100f;
         }
+        if (timePressed <= 0) {
+            ReloadScene();
 
+        }
+        text.text = "Health " + health;
+        score_text.text = ""+ score;
     }
 
 
@@ -103,18 +110,14 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         animator.Play("Ball_jump", 0, 0.2f);
 
-        //If other object is life then add health and destroy object
-        if (collision.gameObject.name == "Life"){
-            Destroy(collision.gameObject);
-            health++;
-        }
+        
 
         //Intantiate Collsion effect
         Instantiate(particles, collision.contacts[0].point, Quaternion.identity).Play();
 
 
 
-        text.text = "Health " + health;
+        
         if (health > 0)
         {
             health--;
@@ -127,8 +130,31 @@ public class Player : MonoBehaviour
 
     }
 
+    void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Trigger");
+        if (other.gameObject.tag == "hook") {
 
-    void ReloadScene() {
+            //transform.position = other.transform.position;
+            score += 50;
+            rb2D.velocity = rb2D.velocity / 5;
+
+            timePressed += 20f;
+            Instantiate(particles, other.transform.position, Quaternion.identity).Play();
+            Destroy(other.gameObject);
+        }
+
+        //If other object is life then add health and destroy object
+        if (other.gameObject.tag == "Life")
+        {
+            health++;
+            Destroy(other.gameObject);
+            
+
+        }
+    }
+
+
+    public void ReloadScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
